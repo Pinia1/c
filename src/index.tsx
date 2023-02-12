@@ -9,7 +9,7 @@ const App = () => {
     return <div>
         <button onClick={() => {
             message.success('成功')
-        }}>点击1</button>
+        }}>点击12</button>
     </div>
 }
 
