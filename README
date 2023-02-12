@@ -1,4 +1,0 @@
-package.json  types指定编译后的入口类型文件
-用tsc打包命令
-webpack只需配置一个 这里多了
-.npmignore文件配置不需发布npm包的文件
