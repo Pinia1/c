@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ReactDOM from 'react-dom/client';
-import subscriber from '../subscriber';
+import subscriber from '@/assist/subscriber';
 import css from './index.module.less'
 import success from '../../img/success.png'
 import error from '../../img/error.png'
-import TransitionGroup from 'react-addons-css-transition-group';
+
+
 
 
 
@@ -72,8 +73,6 @@ const Message = (props: MessageComProps) => {
         })
     }, [])
     return <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {/* <TransitionGroup transitionName="fade" transitionEnterTimeout={500}
-            transitionLeaveTimeout={2000} > */}
         {
             list.map((item, index) => {
                 if (index >= listRef.current.length - maxLength) {
@@ -87,7 +86,6 @@ const Message = (props: MessageComProps) => {
 
             })
         }
-        {/* </TransitionGroup> */}
     </div >
 
 }

@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
 import message from "./core/message/";
-import lovingHeart from "./core/lovingHeart";
 import uploadFile from "./core/file";
-import subscriber from './core/subscriber'
+import Button from "./core/button";
+
+
+const Upolad = new uploadFile()
 
 const App = () => {
-    return <div>
-        <button onClick={() => {
-            message.success('成功')
-        }}>点击12</button>
+    return <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <Button size="default" />
     </div>
 }
 
@@ -20,9 +20,8 @@ root.render(<App />)
 
 const c = {
     message,
-    lovingHeart,
     uploadFile,
-    subscriber
+    Button
 }
 
 export default c
