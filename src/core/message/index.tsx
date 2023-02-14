@@ -4,7 +4,7 @@ import subscriber from '@/assist/subscriber';
 import css from './index.module.less'
 import success from '../../img/success.png'
 import error from '../../img/error.png'
-
+import type { Root } from 'react-dom/client'
 
 
 
@@ -95,7 +95,7 @@ const Message = (props: MessageComProps) => {
 class message {
     /**根节点 */
     private static dom: HTMLElement
-    private static root: any
+    private static root: Root | null
     /**默认配置 */
     private static curConfig: Config = {
         duration: 2000,

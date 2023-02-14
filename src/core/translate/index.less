@@ -1,0 +1,35 @@
+.c-translate {
+    position: fixed;
+    display: flex;
+}
+
+.c-menu {
+    width: 130px;
+    background-color: #fff;
+    box-shadow: darkgrey 0px 0px 20px 5px;
+    border-radius: 10px;
+    padding: 5px 2px;
+    color: #000000e1;
+
+    >ul {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.3s, background 0.3s, padding 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        >li {
+            cursor: pointer;
+            padding: 5px;
+            padding-left: 13px;
+
+            &:hover {
+                background-color: #e6f4ff;
+                border-radius: 6px;
+                color: #1677ff;
+            }
+        }
+    }
+}

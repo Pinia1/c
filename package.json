@@ -27,11 +27,10 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@types/react-addons-css-transition-group": "^15.0.7",
-    "antd": "^5.1.7",
+    "i": "^0.3.7",
     "less-loader": "5.0.0",
+    "npm": "^9.4.2",
     "react": "^18.2.0",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^18.2.0",
     "ts-loader": "^9.4.2"
   },
