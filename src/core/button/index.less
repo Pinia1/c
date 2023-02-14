@@ -6,8 +6,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 
+    &>button {
+
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        padding: 4px 15px;
+        outline: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+    }
 
     .c-btn {
         background-color: #fff;
@@ -22,27 +34,45 @@
         font-size: 14px;
         font-weight: 500;
 
-
         &:hover {
             border-color: #62a0f7;
             color: #62a0f7;
         }
 
-        // &:focus {
-        //     border-color: red;
-        //     color: red;
-        // }
+        &:active {
+            border-color: #006aff;
+            color: #006aff;
+        }
     }
 
-    .c-btn-down {
-        border-color: #006aff !important;
-        color: #006aff !important;
+    .c-btn-primary {
+        background-color: #1677ff;
+        border: 1px solid #1677ff;
+        color: #fff;
+
+        &:hover {
+            background-color: rgb(110, 168, 248);
+            border: 1px solid rgb(110, 168, 248);
+        }
+
+        &:active {
+            background-color: #0958d9;
+            border-color: #0958d9;
+        }
     }
+
+
 
 }
 
 .c-btn-root-shadow {
     border-radius: 6px;
     background-color: transparent;
-    box-shadow: 0px 0px 15px rgb(166, 232, 239);
+    box-shadow: 0px 0px 15px rgb(176, 241, 250);
+}
+
+.c-btn-root-shadow-primary {
+    border-radius: 6px;
+    background-color: transparent;
+    box-shadow: 0px 0px 15px rgb(184, 184, 247);
 }

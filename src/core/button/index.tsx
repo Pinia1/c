@@ -4,51 +4,46 @@ import './index.less'
 interface BtnType {
     size: 'Large' | 'default' | 'small'
     style?: React.CSSProperties
+    type?: 'primary' | 'default'
 }
 
-enum typeENUM {
+enum Size {
     BIG = 'Large',
     MEDIUM = 'default',
     SMALL = 'small'
 }
 
-export default function Button(props: BtnType = { size: 'default' }) {
-    const { size, style } = props
+const clas = { default: 'c-btn', primary: 'c-btn-primary' }
+const mouserUp = { default: 'c-btn-root-shadow', primary: 'c-btn-root-shadow-primary' }
+
+export default function Button(props: BtnType) {
+    const { size = 'default', style, type = 'default' } = props
     const ref = useRef<HTMLButtonElement>(null)
     const rootRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         if (ref.current) {
             switch (size) {
-                case typeENUM.BIG:
+                case Size.BIG:
                     ref.current.style.transform = 'scale(1.2)'
                     break;
-                case typeENUM.MEDIUM:
-
-                    break;
-                case typeENUM.SMALL:
+                case Size.SMALL:
                     ref.current.style.transform = 'scale(0.8)'
                     break;
             }
         }
-
     }, [])
     return <div ref={rootRef} style={style} className="c-btn-root">
-        <button onMouseDown={() => {
-            if (ref.current) {
-                ref.current.classList.add('c-btn-down')
-            }
-        }}
+        <button
             onMouseUp={() => {
-                if (ref.current && rootRef.current) {
-                    ref.current.classList.remove('c-btn-down')
-                    rootRef.current.classList.add('c-btn-root-shadow')
+                if (rootRef.current) {
+                    rootRef.current.classList.add(mouserUp[type])
                     let timer = setTimeout(() => {
-                        if (rootRef.current) rootRef.current.classList.remove('c-btn-root-shadow')
+                        if (rootRef.current) rootRef.current.classList.remove(mouserUp[type])
                         clearTimeout(timer)
                     }, 200)
                 }
             }}
-            ref={ref} className="c-btn">
+            ref={ref} className={clas[type]}>
             点击
         </button>
     </div>

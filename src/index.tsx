@@ -9,7 +9,7 @@ const Upolad = new uploadFile()
 
 const App = () => {
     return <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        <Button size="default" />
+        <Button type='primary' size="default" />
     </div>
 }
 
